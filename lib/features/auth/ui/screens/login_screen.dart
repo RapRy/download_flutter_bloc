@@ -15,7 +15,7 @@ import '../../../common/widgets/custom_textfield_widget.dart';
 import "../../../common/widgets/button_widget.dart";
 
 // * screens
-// import 'package:dl_portal_blc/features/home/ui/screens/home.dart';
+import 'package:dl_portal_blc/features/home/ui/screens/home.dart';
 
 // * resources
 import "../../../../resource/strings.dart";
@@ -66,6 +66,8 @@ class _LoginScreenState extends State<LoginScreen> {
             BlocProvider.of<UserBloc>(context).add(OnSave(state.user));
             ScaffoldMessenger.of(context).showSnackBar(showSnackbarWidget(
                 content: "Authenticated as ${state.user.email}"));
+            Navigator.pushNamedAndRemoveUntil(
+                context, HomeScreen.routeName, (route) => false);
           }
 
           if (state is LoginFailed) {

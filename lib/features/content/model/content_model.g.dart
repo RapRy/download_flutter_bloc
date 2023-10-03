@@ -17,7 +17,7 @@ _$_ContentModel _$$_ContentModelFromJson(Map<String, dynamic> json) =>
       filesize: json['filesize'] as int?,
       meta: json['meta'] == null
           ? null
-          : Meta.fromJson(json['meta'] as Map<String, dynamic>),
+          : MetaSubModel.fromJson(json['meta'] as Map<String, dynamic>),
       name: json['name'] as String?,
       screenshots: (json['screenshots'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -44,7 +44,8 @@ Map<String, dynamic> _$$_ContentModelToJson(_$_ContentModel instance) =>
       'thumbnail': instance.thumbnail,
     };
 
-_$_Meta _$$_MetaFromJson(Map<String, dynamic> json) => _$_Meta(
+_$_MetaSubModel _$$_MetaSubModelFromJson(Map<String, dynamic> json) =>
+    _$_MetaSubModel(
       reviews:
           (json['reviews'] as List<dynamic>?)?.map((e) => e as String).toList(),
       comments: (json['comments'] as List<dynamic>?)
@@ -52,7 +53,8 @@ _$_Meta _$$_MetaFromJson(Map<String, dynamic> json) => _$_Meta(
           .toList(),
     );
 
-Map<String, dynamic> _$$_MetaToJson(_$_Meta instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MetaSubModelToJson(_$_MetaSubModel instance) =>
+    <String, dynamic>{
       'reviews': instance.reviews,
       'comments': instance.comments,
     };

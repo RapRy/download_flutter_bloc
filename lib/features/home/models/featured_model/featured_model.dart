@@ -1,4 +1,4 @@
-import 'package:dl_portal_blc/features/home/models/content_model/content_model.dart';
+import 'package:dl_portal_blc/features/content/model/content_model.dart';
 
 class FeaturedModel {
   final List<dynamic> contents;

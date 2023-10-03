@@ -5,7 +5,7 @@ part "content_model.g.dart";
 
 @freezed
 class ContentModel with _$ContentModel {
-  const factory ContentModel(
+  factory ContentModel(
       {@JsonKey(name: "_id") String? id,
       String? banner,
       String? catName,
@@ -13,20 +13,22 @@ class ContentModel with _$ContentModel {
       bool? featured,
       String? filename,
       int? filesize,
-      Meta? meta,
+      MetaSubModel? meta,
       String? name,
       List<String>? screenshots,
       String? snippet,
       String? subCatName,
       String? thumbnail}) = _ContentModel;
 
-  factory ContentModel.fromJson(Map<String, Object?> json) =>
+  factory ContentModel.fromJson(Map<String, dynamic> json) =>
       _$ContentModelFromJson(json);
 }
 
 @freezed
-class Meta with _$Meta {
-  const factory Meta({List<String>? reviews, List<String>? comments}) = _Meta;
+class MetaSubModel with _$MetaSubModel {
+  factory MetaSubModel({List<String>? reviews, List<String>? comments}) =
+      _MetaSubModel;
 
-  factory Meta.fromJson(Map<String, Object?> json) => _$MetaFromJson(json);
+  factory MetaSubModel.fromJson(Map<String, dynamic> json) =>
+      _$MetaSubModelFromJson(json);
 }

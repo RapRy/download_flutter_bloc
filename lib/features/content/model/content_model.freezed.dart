@@ -28,7 +28,7 @@ mixin _$ContentModel {
   bool? get featured => throw _privateConstructorUsedError;
   String? get filename => throw _privateConstructorUsedError;
   int? get filesize => throw _privateConstructorUsedError;
-  Meta? get meta => throw _privateConstructorUsedError;
+  MetaSubModel? get meta => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   List<String>? get screenshots => throw _privateConstructorUsedError;
   String? get snippet => throw _privateConstructorUsedError;
@@ -55,14 +55,14 @@ abstract class $ContentModelCopyWith<$Res> {
       bool? featured,
       String? filename,
       int? filesize,
-      Meta? meta,
+      MetaSubModel? meta,
       String? name,
       List<String>? screenshots,
       String? snippet,
       String? subCatName,
       String? thumbnail});
 
-  $MetaCopyWith<$Res>? get meta;
+  $MetaSubModelCopyWith<$Res>? get meta;
 }
 
 /// @nodoc
@@ -124,7 +124,7 @@ class _$ContentModelCopyWithImpl<$Res, $Val extends ContentModel>
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
-              as Meta?,
+              as MetaSubModel?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -150,12 +150,12 @@ class _$ContentModelCopyWithImpl<$Res, $Val extends ContentModel>
 
   @override
   @pragma('vm:prefer-inline')
-  $MetaCopyWith<$Res>? get meta {
+  $MetaSubModelCopyWith<$Res>? get meta {
     if (_value.meta == null) {
       return null;
     }
 
-    return $MetaCopyWith<$Res>(_value.meta!, (value) {
+    return $MetaSubModelCopyWith<$Res>(_value.meta!, (value) {
       return _then(_value.copyWith(meta: value) as $Val);
     });
   }
@@ -177,7 +177,7 @@ abstract class _$$_ContentModelCopyWith<$Res>
       bool? featured,
       String? filename,
       int? filesize,
-      Meta? meta,
+      MetaSubModel? meta,
       String? name,
       List<String>? screenshots,
       String? snippet,
@@ -185,7 +185,7 @@ abstract class _$$_ContentModelCopyWith<$Res>
       String? thumbnail});
 
   @override
-  $MetaCopyWith<$Res>? get meta;
+  $MetaSubModelCopyWith<$Res>? get meta;
 }
 
 /// @nodoc
@@ -245,7 +245,7 @@ class __$$_ContentModelCopyWithImpl<$Res>
       meta: freezed == meta
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
-              as Meta?,
+              as MetaSubModel?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -273,7 +273,7 @@ class __$$_ContentModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ContentModel implements _ContentModel {
-  const _$_ContentModel(
+  _$_ContentModel(
       {@JsonKey(name: "_id") this.id,
       this.banner,
       this.catName,
@@ -308,7 +308,7 @@ class _$_ContentModel implements _ContentModel {
   @override
   final int? filesize;
   @override
-  final Meta? meta;
+  final MetaSubModel? meta;
   @override
   final String? name;
   final List<String>? _screenshots;
@@ -393,7 +393,7 @@ class _$_ContentModel implements _ContentModel {
 }
 
 abstract class _ContentModel implements ContentModel {
-  const factory _ContentModel(
+  factory _ContentModel(
       {@JsonKey(name: "_id") final String? id,
       final String? banner,
       final String? catName,
@@ -401,7 +401,7 @@ abstract class _ContentModel implements ContentModel {
       final bool? featured,
       final String? filename,
       final int? filesize,
-      final Meta? meta,
+      final MetaSubModel? meta,
       final String? name,
       final List<String>? screenshots,
       final String? snippet,
@@ -427,7 +427,7 @@ abstract class _ContentModel implements ContentModel {
   @override
   int? get filesize;
   @override
-  Meta? get meta;
+  MetaSubModel? get meta;
   @override
   String? get name;
   @override
@@ -444,32 +444,34 @@ abstract class _ContentModel implements ContentModel {
       throw _privateConstructorUsedError;
 }
 
-Meta _$MetaFromJson(Map<String, dynamic> json) {
-  return _Meta.fromJson(json);
+MetaSubModel _$MetaSubModelFromJson(Map<String, dynamic> json) {
+  return _MetaSubModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Meta {
+mixin _$MetaSubModel {
   List<String>? get reviews => throw _privateConstructorUsedError;
   List<String>? get comments => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MetaCopyWith<Meta> get copyWith => throw _privateConstructorUsedError;
+  $MetaSubModelCopyWith<MetaSubModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MetaCopyWith<$Res> {
-  factory $MetaCopyWith(Meta value, $Res Function(Meta) then) =
-      _$MetaCopyWithImpl<$Res, Meta>;
+abstract class $MetaSubModelCopyWith<$Res> {
+  factory $MetaSubModelCopyWith(
+          MetaSubModel value, $Res Function(MetaSubModel) then) =
+      _$MetaSubModelCopyWithImpl<$Res, MetaSubModel>;
   @useResult
   $Res call({List<String>? reviews, List<String>? comments});
 }
 
 /// @nodoc
-class _$MetaCopyWithImpl<$Res, $Val extends Meta>
-    implements $MetaCopyWith<$Res> {
-  _$MetaCopyWithImpl(this._value, this._then);
+class _$MetaSubModelCopyWithImpl<$Res, $Val extends MetaSubModel>
+    implements $MetaSubModelCopyWith<$Res> {
+  _$MetaSubModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -496,18 +498,22 @@ class _$MetaCopyWithImpl<$Res, $Val extends Meta>
 }
 
 /// @nodoc
-abstract class _$$_MetaCopyWith<$Res> implements $MetaCopyWith<$Res> {
-  factory _$$_MetaCopyWith(_$_Meta value, $Res Function(_$_Meta) then) =
-      __$$_MetaCopyWithImpl<$Res>;
+abstract class _$$_MetaSubModelCopyWith<$Res>
+    implements $MetaSubModelCopyWith<$Res> {
+  factory _$$_MetaSubModelCopyWith(
+          _$_MetaSubModel value, $Res Function(_$_MetaSubModel) then) =
+      __$$_MetaSubModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<String>? reviews, List<String>? comments});
 }
 
 /// @nodoc
-class __$$_MetaCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res, _$_Meta>
-    implements _$$_MetaCopyWith<$Res> {
-  __$$_MetaCopyWithImpl(_$_Meta _value, $Res Function(_$_Meta) _then)
+class __$$_MetaSubModelCopyWithImpl<$Res>
+    extends _$MetaSubModelCopyWithImpl<$Res, _$_MetaSubModel>
+    implements _$$_MetaSubModelCopyWith<$Res> {
+  __$$_MetaSubModelCopyWithImpl(
+      _$_MetaSubModel _value, $Res Function(_$_MetaSubModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -516,7 +522,7 @@ class __$$_MetaCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res, _$_Meta>
     Object? reviews = freezed,
     Object? comments = freezed,
   }) {
-    return _then(_$_Meta(
+    return _then(_$_MetaSubModel(
       reviews: freezed == reviews
           ? _value._reviews
           : reviews // ignore: cast_nullable_to_non_nullable
@@ -531,12 +537,13 @@ class __$$_MetaCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res, _$_Meta>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Meta implements _Meta {
-  const _$_Meta({final List<String>? reviews, final List<String>? comments})
+class _$_MetaSubModel implements _MetaSubModel {
+  _$_MetaSubModel({final List<String>? reviews, final List<String>? comments})
       : _reviews = reviews,
         _comments = comments;
 
-  factory _$_Meta.fromJson(Map<String, dynamic> json) => _$$_MetaFromJson(json);
+  factory _$_MetaSubModel.fromJson(Map<String, dynamic> json) =>
+      _$$_MetaSubModelFromJson(json);
 
   final List<String>? _reviews;
   @override
@@ -560,14 +567,14 @@ class _$_Meta implements _Meta {
 
   @override
   String toString() {
-    return 'Meta(reviews: $reviews, comments: $comments)';
+    return 'MetaSubModel(reviews: $reviews, comments: $comments)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Meta &&
+            other is _$_MetaSubModel &&
             const DeepCollectionEquality().equals(other._reviews, _reviews) &&
             const DeepCollectionEquality().equals(other._comments, _comments));
   }
@@ -582,22 +589,24 @@ class _$_Meta implements _Meta {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MetaCopyWith<_$_Meta> get copyWith =>
-      __$$_MetaCopyWithImpl<_$_Meta>(this, _$identity);
+  _$$_MetaSubModelCopyWith<_$_MetaSubModel> get copyWith =>
+      __$$_MetaSubModelCopyWithImpl<_$_MetaSubModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaToJson(
+    return _$$_MetaSubModelToJson(
       this,
     );
   }
 }
 
-abstract class _Meta implements Meta {
-  const factory _Meta(
-      {final List<String>? reviews, final List<String>? comments}) = _$_Meta;
+abstract class _MetaSubModel implements MetaSubModel {
+  factory _MetaSubModel(
+      {final List<String>? reviews,
+      final List<String>? comments}) = _$_MetaSubModel;
 
-  factory _Meta.fromJson(Map<String, dynamic> json) = _$_Meta.fromJson;
+  factory _MetaSubModel.fromJson(Map<String, dynamic> json) =
+      _$_MetaSubModel.fromJson;
 
   @override
   List<String>? get reviews;
@@ -605,5 +614,6 @@ abstract class _Meta implements Meta {
   List<String>? get comments;
   @override
   @JsonKey(ignore: true)
-  _$$_MetaCopyWith<_$_Meta> get copyWith => throw _privateConstructorUsedError;
+  _$$_MetaSubModelCopyWith<_$_MetaSubModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }

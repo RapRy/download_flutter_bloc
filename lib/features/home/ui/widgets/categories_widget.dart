@@ -7,6 +7,9 @@ import 'package:dl_portal_blc/features/home/bloc/categories/categories_state.dar
 import 'package:dl_portal_blc/features/home/bloc/categories/categories_bloc.dart';
 import 'package:dl_portal_blc/features/home/bloc/categories/categories_event.dart';
 
+// screens
+import 'package:dl_portal_blc/features/category/ui/screens/category_screen.dart';
+
 import '../../../common/widgets/snackbar_widget.dart';
 
 // * utils
@@ -42,7 +45,10 @@ class CategoriesWidget extends StatelessWidget {
                     itemCount: state.categories.length,
                     itemBuilder: (ctx, index) {
                       return InkWell(
-                        onTap: null,
+                        onTap: () {
+                          Navigator.pushNamed(context, CategoryScreen.routeName,
+                              arguments: state.categories[index]);
+                        },
                         child: Container(
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
